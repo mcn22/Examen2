@@ -11,8 +11,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\HotelFinalProgramacionAvanzada.Models\HotelFinalProgramacionAvanzada.Models.csproj" />
-    <ProjectReference Include="..\HotelFinalProgramacionAvanzada.Utility\HotelFinalProgramacionAvanzada.Utility.csproj" />
+    <ProjectReference Include="..\HotelFinalProgramacionAvanzada.Models\Examen2.Models.csproj" />
+    <ProjectReference Include="..\HotelFinalProgramacionAvanzada.Utility\Examen2.Utility.csproj" />
   </ItemGroup>
 
   <ItemGroup>

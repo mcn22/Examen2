@@ -10,7 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\HotelFinalProgramacionAvanzada.Utility\HotelFinalProgramacionAvanzada.Utility.csproj" />
+    <ProjectReference Include="..\HotelFinalProgramacionAvanzada.Utility\Examen2.Utility.csproj" />
   </ItemGroup>
 
 </Project>

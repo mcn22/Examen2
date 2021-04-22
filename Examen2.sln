@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31005.135
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelFinalProgramacionAvanzada", "HotelFinalProgramacionAvanzada\HotelFinalProgramacionAvanzada.csproj", "{D51C81AD-EA0B-4ACE-9D4E-B298246A4234}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Examen2", "HotelFinalProgramacionAvanzada\Examen2.csproj", "{D51C81AD-EA0B-4ACE-9D4E-B298246A4234}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelFinalProgramacionAvanzada.DataAccess", "HotelFinalProgramacionAvanzada.DataAccess\HotelFinalProgramacionAvanzada.DataAccess.csproj", "{A545860F-3ED4-481E-A7AC-6854F58F3E7B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Examen2.DataAccess", "HotelFinalProgramacionAvanzada.DataAccess\Examen2.DataAccess.csproj", "{A545860F-3ED4-481E-A7AC-6854F58F3E7B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelFinalProgramacionAvanzada.Models", "HotelFinalProgramacionAvanzada.Models\HotelFinalProgramacionAvanzada.Models.csproj", "{5C2DF2D7-CFC5-4219-9AA9-1F59E5C5F132}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Examen2.Models", "HotelFinalProgramacionAvanzada.Models\Examen2.Models.csproj", "{5C2DF2D7-CFC5-4219-9AA9-1F59E5C5F132}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelFinalProgramacionAvanzada.Utility", "HotelFinalProgramacionAvanzada.Utility\HotelFinalProgramacionAvanzada.Utility.csproj", "{FA60C698-B9C6-4C9D-80F7-6EEFE7826FA6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Examen2.Utility", "HotelFinalProgramacionAvanzada.Utility\Examen2.Utility.csproj", "{FA60C698-B9C6-4C9D-80F7-6EEFE7826FA6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

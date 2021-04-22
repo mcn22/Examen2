@@ -29,9 +29,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\HotelFinalProgramacionAvanzada.DataAccess\HotelFinalProgramacionAvanzada.DataAccess.csproj" />
-    <ProjectReference Include="..\HotelFinalProgramacionAvanzada.Models\HotelFinalProgramacionAvanzada.Models.csproj" />
-    <ProjectReference Include="..\HotelFinalProgramacionAvanzada.Utility\HotelFinalProgramacionAvanzada.Utility.csproj" />
+    <ProjectReference Include="..\HotelFinalProgramacionAvanzada.DataAccess\Examen2.DataAccess.csproj" />
+    <ProjectReference Include="..\HotelFinalProgramacionAvanzada.Models\Examen2.Models.csproj" />
+    <ProjectReference Include="..\HotelFinalProgramacionAvanzada.Utility\Examen2.Utility.csproj" />
   </ItemGroup>
 
   <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
