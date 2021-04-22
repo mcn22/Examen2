@@ -92,7 +92,7 @@ namespace HotelFinalProgramacionAvanzada.Areas.Identity.Pages.Account
                 new InputModel
                 {
                     Hoteles = _unidadTrabajo.Hoteles.Listar().Select(s => new SelectListItem { Text = s.Nombre, Value = s.HotelId.ToString() }),
-                    Roles = _roleManager.Roles.Where(w => w.Name != SD.Roles.Cliente).Select(s => s.Name).Select(s => new SelectListItem { Text = s, Value = s })
+                    Roles = _roleManager.Roles.Where(w => w.Name != SD.Roles.Simple).Select(s => s.Name).Select(s => new SelectListItem { Text = s, Value = s })
                 };
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
         }
@@ -101,6 +101,8 @@ namespace HotelFinalProgramacionAvanzada.Areas.Identity.Pages.Account
         {
             returnUrl ??= Url.Content("~/");
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
+
+            await Setup.InitAsync(_userManager, _roleManager);
             if (ModelState.IsValid)
             {
                 var user = new Usuario
@@ -116,70 +118,37 @@ namespace HotelFinalProgramacionAvanzada.Areas.Identity.Pages.Account
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User created a new account with password.");
-                    //*****************************************************************************//
-                    //*****************************************************************************//
-                    //Creacion de los roles en caso de que no existan para ejecutar la primera vez
-                    if (!await _roleManager.RoleExistsAsync(SD.Roles.Administrador))
-                    {
-                        await _roleManager.CreateAsync(new IdentityRole(SD.Roles.Administrador));
-                    }
-                    if (!await _roleManager.RoleExistsAsync(SD.Roles.Empleado))
-                    {
-                        await _roleManager.CreateAsync(new IdentityRole(SD.Roles.Empleado));
-                    }
-                    if (!await _roleManager.RoleExistsAsync(SD.Roles.Cliente))
-                    {
-                        await _roleManager.CreateAsync(new IdentityRole(SD.Roles.Cliente));
-                    }
-                    //fin Creacion de los roles
-                    //*****************************************************************************//
-                    //*****************************************************************************//
-                    //Creacion el primer usuario con rol de administrador para el primer usuario
-                    var userAdmin =
-                    new Usuario
-                    {
-                        UserName = "admin@admin.com",
-                        Email = "admin@admin.com",
-                        Nombre = "admin",
-                        PhoneNumber = "12345",
-                    };
-                    if (!_userManager.Users.Select(u => u.Email == u.Email).FirstOrDefault())
-                    {
-                        await _userManager.CreateAsync(userAdmin, "Admin-2020");
-                        await _userManager.AddToRoleAsync(userAdmin, SD.Roles.Administrador);
-                    }
-             
-                    //Fin Creacion el primer usuario con rol de administrador
+
                     //*****************************************************************************//
                     //*****************************************************************************//
                     // Codigo para ejecutar despues de que se tiene un usuario y rol admin en los pasos anteriores
-                    //if (string.IsNullOrEmpty(Input.Role))
-                    //{
-                    //    await _userManager.AddToRoleAsync(user, SD.Roles.Cliente);
-                    //}
-                    //else
-                    //{
-                    //    var hotelEmpleado = new HotelEmpleado();
-                    //    if (Input.Role.ToString().Equals(SD.Roles.Empleado.ToString()))
-                    //    {
-                    //        hotelEmpleado = new HotelEmpleado
-                    //        {
-                    //            UserId = user.Id,
-                    //            HotelId = Input.HotelId
-                    //        };
-                    //    }
-                    //    else
-                    //    {
-                    //        hotelEmpleado = new HotelEmpleado
-                    //        {
-                    //            UserId = user.Id,
-                    //            HotelId = null
-                    //        };
-                    //    }
-                    //    _unidadTrabajo.HotelEmpleados.Agregar(hotelEmpleado);
-                    //    _unidadTrabajo.Guardar();
-                    //    await _userManager.AddToRoleAsync(user, user.Role);
-                    //}
+                    if (string.IsNullOrEmpty(Input.Role))
+                    {
+                        await _userManager.AddToRoleAsync(user, SD.Roles.Simple);
+                    }
+                    else
+                    {
+                        //var hotelEmpleado = new HotelEmpleado();
+                        //if (Input.Role.ToString().Equals(SD.Roles.Empleado.ToString()))
+                        //{
+                        //    hotelEmpleado = new HotelEmpleado
+                        //    {
+                        //        UserId = user.Id,
+                        //        HotelId = Input.HotelId
+                        //    };
+                        //}
+                        //else
+                        //{
+                        //    hotelEmpleado = new HotelEmpleado
+                        //    {
+                        //        UserId = user.Id,
+                        //        HotelId = null
+                        //    };
+                        //}
+                        //_unidadTrabajo.HotelEmpleados.Agregar(hotelEmpleado);
+                        _unidadTrabajo.Guardar();
+                        await _userManager.AddToRoleAsync(user, user.Role);
+                    }
                     // Fin del codigo para ejecutar despues de que se tiene un usuario y rol admin
 
                     ///////////////////////////

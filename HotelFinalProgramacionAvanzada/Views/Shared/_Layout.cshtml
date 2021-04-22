@@ -30,7 +30,7 @@
                         <li class="nav-item">
                             <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">@localizer["Home"]</a>
                         </li>
-                        @if (User.IsInRole(SD.Roles.Cliente))
+                        @if (User.IsInRole(SD.Roles.Simple))
                         {
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
