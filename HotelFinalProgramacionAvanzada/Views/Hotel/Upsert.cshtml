@@ -1,0 +1,64 @@
+﻿@model HotelFinalProgramacionAvanzada.Models.Hotel
+
+@{ Layout = null; }
+
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="Upsert" asp-route-id="@Model.HotelId" onsubmit="return PostForm(this);">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="HotelId" />
+            <div class="form-group row m-1">
+                <label asp-for="Nombre" class="control-label"></label>
+                <div class="input-group">
+                    <input asp-for="Nombre" class="form-control" />
+                </div>
+                <span asp-validation-for="Nombre" class="text-danger"></span>
+            </div>
+            <div class="form-group row m-1">
+                <label asp-for="Descripcion" class="control-label"></label>
+                <div class="input-group">
+                    <input asp-for="Descripcion" class="form-control" />
+                </div>
+                <span asp-validation-for="Descripcion" class="text-danger"></span>
+            </div>
+            <div class="form-group row m-1">
+                <label asp-for="UrlImagen" class="control-label"></label>
+                <div class="input-group">
+                    <input asp-for="UrlImagen" class="form-control" />
+                </div>
+                <span asp-validation-for="UrlImagen" class="text-danger"></span>
+            </div>
+            <div class="form-group row m-1">
+                <label asp-for="Direccion" class="control-label"></label>
+                <div class="input-group">
+                    <input asp-for="Direccion" class="form-control" />
+                </div>
+                <span asp-validation-for="Direccion" class="text-danger"></span>
+            </div>
+            <div class="form-group row m-1">
+                <label asp-for="Ciudad" class="control-label"></label>
+                <div class="input-group">
+                    <input asp-for="Ciudad" class="form-control" />
+                </div>
+                <span asp-validation-for="Ciudad" class="text-danger"></span>
+            </div>
+            <div class="form-group row m-1">
+                <label asp-for="Telefono" class="control-label"></label>
+                <div class="input-group">
+                    <input asp-for="Telefono" class="form-control" />
+                </div>
+                <span asp-validation-for="Telefono" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <div class="col-md-6 offset-md-3">
+                    <input type="submit" value="Guardar" class="btn btn-primary btn-block" />
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts
+{
+    <partial name="_ValidationScriptsPartial" />
+}
